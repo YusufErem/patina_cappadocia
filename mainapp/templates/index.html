@@ -1,0 +1,127 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+    
+    {% include 'partials/_head.html' %}
+
+<body>
+
+    <!-- header-start -->
+    {% include 'partials/_header.html' %}
+    <!-- header-end -->
+
+    <!-- slider_area_start -->
+    {% include 'partials/_sliderHome.html' %}
+    <!-- slider_area_end -->
+
+    <!-- about_area_start -->
+    {% include 'partials/_aboutHome.html' %}
+    
+    <!-- about_area_end -->
+
+    <!-- offers_area_start -->
+    {% include 'partials/_roomsSlider.html' %}
+    <!-- offers_area_end -->
+
+    <!-- video_area_start -->
+    <!-- <div class="video_area video_bg overlay">
+        <div class="video_area_inner text-center">
+            <h3>Relax and Enjoy your <br>
+                Vacation </h3>
+            <a href="https://www.youtube.com/watch?v=vLnPwxZdW4Y" class="video_btn popup-video">
+                <i class="fa fa-play"></i>
+            </a>
+        </div>
+    </div> -->
+    <!-- video_area_end -->
+
+    <!-- about_food_start -->
+    <!-- {% include 'partials/_aboutfoodHome.html' %} -->
+    <!-- about_food_end -->
+
+    <!-- cappadocia_activities_start -->
+    {% include 'partials/_activitiesHome.html' %}
+    <!-- cappadocia_activities_end -->
+
+    <!-- forQuery_start -->
+    <div class="forQuery">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1 col-md-12">
+                    <div class="Query_border">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-xl-6 col-md-6">
+                                <div class="Query_text">
+                                    <h1 style="font-weight: bold; text-transform: uppercase; color: #74C0FC;">Rezervasyon Yap</h1>
+
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-md-6">
+                                <div class="phone_num">
+                                    <a href="tel:+905424685050" class="mobile_no">0542 468 50 50</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- forQuery_end-->
+
+    <!-- instragram_area_start -->
+    {% include 'partials/_instagramHome.html' %}
+    <!-- instragram_area_end -->
+
+    <!-- footer -->
+    {% include 'partials/_footer.html' %}
+    <!-- form itself end -->
+
+    <!-- JS here -->
+    <script src="{% static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>
+    <script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/ajax-form.js' %}"></script>
+    <script src="{% static 'js/waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/scrollIt.js' %}"></script>
+    <script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script src="{% static 'js/nice-select.min.js' %}"></script>
+    <script src="{% static 'js/jquery.slicknav.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/gijgo.min.js' %}"></script>
+
+    <!--contact js-->
+    <script src="{% static 'js/contact.js' %}"></script>
+    <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'js/jquery.form.js' %}"></script>
+    <script src="{% static 'js/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'js/mail-script.js' %}"></script>
+
+    <script src="{% static 'js/main.js' %}"></script>
+    <script>
+        $('#datepicker').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+             rightIcon: '<span class="fa fa-caret-down"></span>'
+         }
+        });
+        $('#datepicker2').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+             rightIcon: '<span class="fa fa-caret-down"></span>'
+         }
+
+        });
+    </script>
+
+
+</body>
+
+</html>
