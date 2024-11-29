@@ -75,7 +75,7 @@
            .book_btn{
                margin-left: 30px;
                a{
-                background: #009DFF;
+                background: rgb(212, 212, 212);
                 padding: 12px 26px;
                 font-size: 14px;
                 font-weight: 400;
@@ -83,8 +83,8 @@
                 color: #fff;
                 &:hover{
                     background: #fff;
-                    color: #009DFF;
-                    border: 1px solid #009DFF;
+                    color: rgb(212, 212, 212);
+                    border: 1px solid rgb(212, 212, 212);
                 }
                }
            }
