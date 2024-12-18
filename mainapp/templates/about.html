@@ -1,69 +1,43 @@
+{% extends 'index.html' %}
 {% load static %}
-<!doctype html>
-<html class="no-js" lang="zxx">
 
-{% include 'partials/_head.html' %}
+{% block content %}
+<!-- bradcam_area_start -->
+<div class="bradcam_area breadcam_bg">
+    <h3>Hakkımızda</h3>
+</div>
+<!-- bradcam_area_end -->
 
-<body>
-    <!--[if lte IE 9]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-    <![endif]-->
-
-    <!-- header -->
-    {% include 'partials/_header.html' %}
-
-    <!-- bradcam_area_start -->
-    <div class="bradcam_area breadcam_bg">
-        <h3>Hakkımızda</h3>
-    </div>
-    <!-- bradcam_area_end -->
-
-    <!-- about_area_start -->
-    <div class="about_area mb-50">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-5 col-lg-5">
-                    <div class="about_info">
-                        <div class="section_title mb-20px">
-                            <span>Hakkımızda</span>
-                            <h3>Kapadokya’nın Büyüsüyle<br> Lüks Konaklama</h3>
-                        </div>
-                        <p>Patina Cappadocia, Türkiye’nin kültürel ve doğal mirasının en gözde noktası olan Kapadokya’da, Uçhisar Kalesi’nin hemen yakınında yer alır. Doğanın büyüleyici manzaralarını geleneksel taş mimari ile birleştirerek, konforu ve tarihi bir arada sunar.</p>
-                        <p>Otelimiz, Kapadokya’nın kalbindeki benzersiz konumu sayesinde misafirlerine eşsiz bir deneyim sunar. Sıcak hava balonu turları, tarihi mekanlar ve Kapadokya’nın doğal güzelliklerine kolay erişim sağlayan Patina Cappadocia, konuklarına unutulmaz anılar biriktirme fırsatı sunar.</p>
+<!-- about_area_start -->
+<div class="about_area mb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5 col-lg-5">
+                <div class="about_info">
+                    <div class="section_title mb-20px">
+                        <span>Hakkımızda</span>
+                        <h3>Kapadokya’nın Büyüsüyle<br> Lüks Konaklama</h3>
                     </div>
+                    <p>Patina Cappadocia, Türkiye’nin kültürel ve doğal mirasının en gözde noktası olan Kapadokya’da, Uçhisar Kalesi’nin hemen yakınında yer alır. Doğanın büyüleyici manzaralarını geleneksel taş mimari ile birleştirerek, konforu ve tarihi bir arada sunar.</p>
+                    <p>Otelimiz, Kapadokya’nın kalbindeki benzersiz konumu sayesinde misafirlerine eşsiz bir deneyim sunar. Sıcak hava balonu turları, tarihi mekanlar ve Kapadokya’nın doğal güzelliklerine kolay erişim sağlayan Patina Cappadocia, konuklarına unutulmaz anılar biriktirme fırsatı sunar.</p>
                 </div>
-                <div class="col-xl-7 col-lg-7">
-                    <div class="about_thumb d-flex">
-                        <div class="img_1">
-                            <img src="{% static 'img/about/58.jpg' %}" alt="Patina Cappadocia Oteli">
-                        </div>
-                        <div class="img_2">
-                            <img src="{% static 'img/about/71.jpg' %}" alt="Kapadokya'da Lüks">
-                        </div>
+            </div>
+            <div class="col-xl-7 col-lg-7">
+                <div class="about_thumb d-flex">
+                    <div class="img_1">
+                        <img src="{% static 'img/about/58.jpg' %}" alt="Patina Cappadocia Oteli">
+                    </div>
+                    <div class="img_2">
+                        <img src="{% static 'img/about/71.jpg' %}" alt="Kapadokya'da Lüks">
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- about_area_end -->
+</div>
+<!-- about_area_end -->
 
-    <!-- rooms_area_start -->
-    {% include 'partials/_roomsSlider.html' %}
-    <!-- rooms_area_end -->
-
-    <!-- footer -->
-    {% include 'partials/_footer.html' %}
-    <!-- footer_end -->
-
-    <!-- JS here -->
-    <script src="{% static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>
-    <script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
-    <script src="{% static 'js/popper.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'js/main.js' %}"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-   
-</body>
-
-</html>
+<!-- rooms_area_start -->
+{% include 'partials/_roomsSlider.html' %}
+<!-- rooms_area_end -->
+{% endblock %}
