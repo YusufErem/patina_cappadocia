@@ -41,3 +41,19 @@
         </div>
     </div>
 </div>
+
+<style>
+    .instragram_area {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .single_instagram {
+        flex: 1 1 20%; /* Adjust the percentage as needed */
+        box-sizing: border-box;
+    }
+    @media (max-width: 600px) {
+        .single_instagram {
+            flex: 1 1 100%; /* Full width on small screens */
+        }
+    }
+</style>

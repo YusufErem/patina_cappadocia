@@ -1,11 +1,16 @@
 {% load static %}
-<header>
+<header >
     <style>
-         .header-area a {
-        text-decoration: none; /* Alt çizgiyi kaldır */
-    }
-    
+        .header-area a {
+            text-decoration: none; /* Alt çizgiyi kaldır */
+        }
 
+        @media (min-width: 768px) and (max-width: 991px) {
+            .header-area {
+                padding-top: 0;
+                zoom: 200%;
+            }
+        }
     </style>
     <div class="header-area ">
         <div id="sticky-header" class="main-header-area">
@@ -13,12 +18,13 @@
                 <div class="row align-items-center no-gutters">
                     <div class="col-xl-5 col-lg-6">
                         <div class="main-menu  d-none d-lg-block">
-                            <nav>
+                            <nav >
                                 <ul id="navigation">
                                     <li><a href="{% url 'index' %}">Patina Cappadocia</a></li>
                                     <li><a href="{% url 'about' %}">Hakkinda</a></li>
                                     <li><a href="{% url 'rooms' %}">Odalar </a></li>
                                     <li><a href="{% url 'contact' %}">Contact</a></li>
+                                    <li><a href="https://www.reseliva.com/booknow/patina-cappadocia/">Rezervasyon Yap</a></li>
                                                                     
                                     
                                 </ul>
@@ -41,6 +47,13 @@
                                         logo.src = "{% static 'img/logo1-(1).png' %}";
                                     }
                                 });
+
+                                // Zoom the navbar to 200% on mobile devices
+                                if (window.innerWidth <= 768) {
+                                    document.querySelectorAll('.header-area a').forEach(link => {
+                                        link.style.zoom = '200%';
+                                    });
+                                }
                             </script>
                             </a>
                         </div>
