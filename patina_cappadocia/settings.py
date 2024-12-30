@@ -21,14 +21,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-yy4-+^7%sdz$b^wr3@ik^y$c_crf3k5r0rbnq)x&pc_c0=08n5'
-
+# SECRET_KEY = 'django-insecure-yy4-+^7%sdz$b^wr3@ik^y$c_crf3k5r0rbnq)x&pc_c0=08n5'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
-
+DEBUG = os.environ.get('DEBUG', 'False').lower() == 'True'  # False if not in os.environ or not 'True' in os.environ else True
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 # Application definition
 
 INSTALLED_APPS = [
@@ -78,6 +75,7 @@ WSGI_APPLICATION = 'patina_cappadocia.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+import dj_database_url
 
 DATABASES = {
     'default': {
@@ -85,6 +83,9 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+database_url = os.environ.get("DATABASE_URL")
+DATABASES['default'] = dj_database_url.parse(database_url)
 
 
 # Password validation
