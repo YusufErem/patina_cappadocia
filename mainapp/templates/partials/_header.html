@@ -4,6 +4,7 @@
          .header-area a {
         text-decoration: none; /* Alt çizgiyi kaldır */
     }
+    
 
     </style>
     <div class="header-area ">
@@ -26,8 +27,8 @@
                     </div>
                     <div class="col-xl-2 col-lg-2">
                         <div class="logo-img">
-                            <a href="index.html">
-                                <img src="{% static 'img/logo1.png' %}" alt="">
+                            <a href="{% url 'index' %}">
+                                <img src="{% static 'img/logo1-(1).png' %}" alt="">
                             <script>
                                 window.addEventListener('scroll', function() {
                                     var header = document.getElementById('sticky-header');
@@ -37,7 +38,7 @@
                                         logo.src = "{% static 'img/logowhite.png' %}";
                                     } else {
                                         header.classList.remove('sticky');
-                                        logo.src = "{% static 'img/logo1.png' %}";
+                                        logo.src = "{% static 'img/logo1-(1).png' %}";
                                     }
                                 });
                             </script>
@@ -57,7 +58,7 @@
                                 </ul>
                             </div>
                             <div class="book_btn d-none d-lg-block">
-                                <a class="popup-with-form" href="#test-form">Rezervasyon Yap</a>
+                                <a href="https://www.reseliva.com/booknow/patina-cappadocia/">Rezervasyon Yap</a>
                             </div>
                         </div>
                     </div>
@@ -70,47 +71,4 @@
     </div>
 </header>
 <!-- header-end -->
-<form id="test-form" class="white-popup-block mfp-hide" action="{% url 'book' %}" method="get">
-    <div class="popup_box">
-        <div class="popup_inner">
-            <h3>Uygunluk Kontrolü</h3>
-            <div class="row">
-                <div class="col-xl-6">
-                    <input id="datepicker" name="start_date" placeholder="Giriş Tarihi" required>
-                </div>
-                <div class="col-xl-6">
-                    <input id="datepicker2" name="end_date" placeholder="Çıkış Tarihi" required>
-                </div>
-                <div class="col-xl-6">
-                    <select class="form-select wide" id="adults-select" name="adults" re>
-                        <option value="1" selected>1 Yetişkin</option>
-                        <option value="2">2 Yetişkin</option>
-                        <option value="3">3 Yetişkin</option>
-                        <option value="4">4 Yetişkin</option>
-                    </select>
-                </div>
-                <div class="col-xl-6">
-                    <select class="form-select wide" id="children-select" name="children">
-                        <option value="0" selected>0 Çocuk</option>
-                        <option value="1">1 Çocuk</option>
-                        <option value="2">2 Çocuk</option>
-                        <option value="3">3 Çocuk</option>
-                    </select>
-                </div>
-                <div class="col-xl-12 mt-4">
-                    <select class="form-select wide" id="room-type-select" name="room_type">
-                        <option value="" selected>Oda Türü</option>
-                        <option value="royal">Royal Oda</option>
-                        <option value="exclusive">Exclusive Oda</option>
-                        <option value="luxury">Luxury Oda</option>
-                        <option value="executive">Executive Oda</option>
-                        <option value="superior">Superior Oda</option>
-                    </select>
-                </div>
-                <div class="col-xl-12 mt-4">
-                    <button type="submit" class="boxed-btn3">Uygunluğu Kontrol Et</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</form>
+

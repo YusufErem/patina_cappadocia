@@ -1,20 +1,22 @@
 {% extends 'index.html' %}
-
-{% block content %}
 {% load static %}
+{% block content %}
+
     <!-- bradcam_area_start -->
     <div class="bradcam_area breadcam_bg_1">
-        <h3>Odalar</h3>
+        <h3>ODALAR</h3>
     </div>
     <!-- bradcam_area_end -->
 
     <!-- offers_area_start -->
+<section class="rooms-section">
     <div style="margin-top: 20px;">
         {% include 'partials/_roomsHome.html' %}
     </div>
+</section>
+    
     
     <!-- instragram_area_start -->
     {% include 'partials/_instagramHome.html' %}
-    <!-- instragram_area_end -->
 
 {% endblock %}
