@@ -1,0 +1,21 @@
+# robots.txt for patinahotel.com.tr
+User-agent: *
+Allow: /
+Allow: /about
+Allow: /rooms
+Allow: /contact
+
+# Sitemaps
+Sitemap: https://patinahotel.com.tr/sitemap.xml
+
+# Media and static files
+Allow: /static/
+Allow: /media/
+
+# Prevent access to admin and unnecessary paths
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /cache/
+Disallow: /*.php$
+Disallow: /*?* 
