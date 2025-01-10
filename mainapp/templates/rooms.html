@@ -4,19 +4,65 @@
 
     <!-- bradcam_area_start -->
     <div class="bradcam_area breadcam_bg_1">
-        <h3>ODALAR</h3>
+        <h3>Odalarımız</h3>
     </div>
     <!-- bradcam_area_end -->
 
-    <!-- offers_area_start -->
-<section class="rooms-section">
-    <div style="margin-top: 20px;">
-        {% include 'partials/_roomsHome.html' %}
-    </div>
-</section>
-    
-    
-    <!-- instragram_area_start -->
+    <!-- rooms section start -->
+    <section class="rooms-section">
+        <div class="rooms_area">
+            {% include 'partials/_roomsHome.html' %}
+        </div>
+    </section>
+    <!-- rooms section end -->
+
+    <!-- instagram_area_start -->
     {% include 'partials/_instagramHome.html' %}
+    <!-- instagram_area_end -->
+
+    <style>
+        .bradcam_area {
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+        }
+        .bradcam_area h3 {
+            font-size: 50px;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .rooms_area {
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+        @media (max-width: 991px) {
+            .bradcam_area {
+                height: 300px;
+            }
+            .bradcam_area h3 {
+                font-size: 40px;
+            }
+            .rooms_area {
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
+        }
+        @media (max-width: 767px) {
+            .bradcam_area {
+                height: 200px;
+            }
+            .bradcam_area h3 {
+                font-size: 30px;
+            }
+        }
+    </style>
 
 {% endblock %}

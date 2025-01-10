@@ -1,53 +1,125 @@
 {% load static %}
 <div class="about_area">
+    <style>
+        .about_area {
+            padding: 100px 0;
+            background: #fff;
+        }
+        .about_info h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1F1F1F;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+        .about_info h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #009DFF;
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+        .about_info p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 25px;
+        }
+        .about_info ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+        .about_info ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            color: #444;
+        }
+        .about_info ul li:before {
+            content: "•";
+            color: #009DFF;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        .about_info ul li strong {
+            color: #1F1F1F;
+        }
+        .about_thumb {
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .about_thumb img {
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .about_thumb img:hover {
+            transform: scale(1.02);
+        }
+        @media (max-width: 768px) {
+            .about_area {
+                padding: 50px 0;
+            }
+            .about_info h1 {
+                font-size: 2rem;
+            }
+            .about_info h3 {
+                font-size: 1.5rem;
+            }
+            .about_thumb {
+                margin-top: 30px;
+            }
+        }
+    </style>
     <div class="container">
         <div class="row">
             <div class="col-xl-5 col-lg-5">
                 <div class="about_info">
-                    <div class="section_title mb-20px text-center">
-                        <h1 style="font-weight: bold; text-transform: uppercase; color: black;">HAKKIMIZDA</h1>
-                    </div>
-                    <hr>
-                    <h3>Doğanın Kalbinde <br> Benzersiz Bir Konaklama</h3>
-                    <p style="font-weight: 500;">
-                        Uçhisar’ın büyüleyici manzaraları içerisinde yer alan Patina Cappadocia, geleneksel dokuyu ve modern 
-                        lüksü bir araya getiriyor. Taş işçiliğiyle inşa edilen mimarimiz, bölgenin zengin kültürel mirasını 
-                        yansıtırken, sunduğumuz çağdaş imkanlar konforlu bir konaklama deneyimi yaşamanızı sağlar.
+                    <h1>Hakkımızda</h1>
+                    <h3>Doğanın Kalbinde<br>Benzersiz Bir Konaklama</h3>
+                    <p>
+                        Uçhisar'ın büyüleyici manzaraları içerisinde yer alan Patina Kapadokya, geleneksel dokuyu ve modern 
+                        lüksü mükemmel bir uyumla bir araya getiriyor. Taş işçiliğiyle inşa edilen mimarimiz, bölgenin zengin kültürel mirasını 
+                        yansıtırken, sunduğumuz çağdaş imkanlar size konforlu bir konaklama deneyimi yaşatıyor.
                     </p>
                     <ul>
-                        <li><strong>Doğal Güzellik:</strong> Kapadokya’nın eşsiz manzaralarına sahip teras ve odalar.</li>
-                        <li><strong>Merkezi Konum:</strong> Uçhisar Kalesi ve Kapadokya’nın diğer cazibe merkezlerine kolay ulaşım.</li>
-                        <li><strong>Gastronomik Deneyim:</strong> Bölgeye özgü lezzetlerle damak tadınızı şımartan restoran.</li>
-                        <li><strong>Aktiviteler:</strong> Balon turları, doğa yürüyüşleri ve rehberli geziler ile unutulmaz bir deneyim.</li>
+                        <li><strong>Doğal Güzellik:</strong> Kapadokya'nın eşsiz manzaralarına sahip teras ve odalar</li>
+                        <li><strong>Merkezi Konum:</strong> Uçhisar Kalesi ve Kapadokya'nın diğer cazibe merkezlerine kolay ulaşım</li>
+                        <li><strong>Gastronomik Deneyim:</strong> Bölgeye özgü lezzetlerle damak tadınızı şımartan restoran</li>
+                        <li><strong>Aktiviteler:</strong> Balon turları, doğa yürüyüşleri ve rehberli geziler ile unutulmaz anılar</li>
                     </ul>
-                    <hr>
-                    <p style="font-weight: 500;">
-                        İster doğa ve tarih keşfine çıkmak isteyen maceraperestler, ister sakinlik arayan çiftler ve aileler 
-                        için Patina Cappadocia, Kapadokya’nın büyüleyici atmosferini keşfetmek adına mükemmel bir durak noktasıdır.
+                    <p>
+                        İster doğa ve tarih keşfine çıkmak isteyen maceraperestler, ister huzur arayan çiftler ve aileler 
+                        için Patina Kapadokya, büyüleyici Kapadokya'yı keşfetmek için mükemmel bir başlangıç noktasıdır.
                     </p>
                 </div>
             </div>
             <div class="col-xl-7 col-lg-7">
                 <div class="about_thumb d-flex">
                     <div class="img_1">
-                        <img src="{% static 'img/about/51.jpg' %}" alt="">
+                        <img src="{% static 'img/about/51.jpg' %}" alt="Patina Kapadokya Dış Görünüm" loading="lazy">
                     </div>
                     <div class="img_2">
-                        <img src="{% static 'img/about/58.jpg' %}" alt="">
+                        <img src="{% static 'img/about/58.jpg' %}" alt="Patina Kapadokya Oda Görünümü" loading="lazy">
                     </div>
                     <div class="img_2">
-                        <img src="{% static 'img/about/65.jpg' %}" alt="">
+                        <img src="{% static 'img/about/65.jpg' %}" alt="Patina Kapadokya Teras Manzarası" loading="lazy">
                     </div>
                 </div>
                 <div class="about_thumb d-flex">
                     <div class="img_1">
-                        <img src="{% static 'img/about/56.jpg' %}" alt="">
+                        <img src="{% static 'img/about/56.jpg' %}" alt="Patina Kapadokya Restoran" loading="lazy">
                     </div>
                     <div class="img_2">
-                        <img src="{% static 'img/about/70.jpg' %}" alt="">
+                        <img src="{% static 'img/about/70.jpg' %}" alt="Patina Kapadokya Lobi" loading="lazy">
                     </div>
                     <div class="img_2">
-                        <img src="{% static 'img/about/71.jpg' %}" alt="">
+                        <img src="{% static 'img/about/71.jpg' %}" alt="Patina Kapadokya Gün Batımı Manzarası" loading="lazy">
                     </div>
                 </div>
             </div>

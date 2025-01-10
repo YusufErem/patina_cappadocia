@@ -1,32 +1,116 @@
 {% load static %}
-<header >
+<header>
     <style>
-        .header-area a {
-            text-decoration: none; /* Alt çizgiyi kaldır */
+        .header-area {
+            position: fixed;
+            width: 100%;
+            z-index: 999;
+            transition: all 0.3s ease;
+            background: transparent;
         }
-
-        @media (min-width: 768px) and (max-width: 991px) {
+        .header-area.sticky {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        .header-area a {
+            text-decoration: none;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            transition: color 0.3s ease;
+        }
+        .main-menu {
+            margin-right: 0;
+            padding-right: 0;
+        }
+        .main-menu ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .main-menu ul li {
+            list-style: none;
+        }
+        .main-menu ul li a {
+            font-size: 16px;
+            font-weight: 500;
+            padding: 35px 15px;
+            color: #fff;
+            display: block;
+        }
+        .main-menu ul li a.highlight {
+            color: #009DFF;
+        }
+        .book_room {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 0;
+        }
+        .book_btn {
+            margin-left: 20px;
+        }
+        .book_btn a {
+            background: #009DFF;
+            padding: 12px 26px;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 4px;
+            color: #fff !important;
+            transition: background 0.3s ease;
+            white-space: nowrap;
+        }
+        .book_btn a:hover {
+            background: #0056b3;
+        }
+        .socail_links {
+            margin-right: 0;
+        }
+        .socail_links ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+        .socail_links ul li {
+            list-style: none;
+            margin-left: 15px;
+        }
+        .socail_links ul li a {
+            font-size: 18px;
+            color: #fff;
+        }
+        .logo-img {
+            text-align: center;
+        }
+        .logo-img img {
+            max-height: 60px;
+            width: auto;
+        }
+        @media (max-width: 991px) {
             .header-area {
-                padding-top: 0;
-                zoom: 200%;
+                padding: 10px 0;
+                background: rgba(0, 0, 0, 0.8);
+            }
+            .mobile_menu {
+                padding: 10px;
+            }
+            .main-menu ul li a {
+                padding: 15px 10px;
             }
         }
     </style>
-    <div class="header-area ">
+    <div class="header-area">
         <div id="sticky-header" class="main-header-area">
-            <div class="container-fluid p-0">
-                <div class="row align-items-center no-gutters">
-                    <div class="col-xl-5 col-lg-6">
-                        <div class="main-menu  d-none d-lg-block">
-                            <nav >
+            <div class="container-fluid">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-xl-5 col-lg-5">
+                        <div class="main-menu d-none d-lg-block">
+                            <nav>
                                 <ul id="navigation">
-                                    <li><a href="{% url 'index' %}">Patina Cappadocia</a></li>
-                                    <li><a href="{% url 'about' %}">Hakkinda</a></li>
-                                    <li><a href="{% url 'rooms' %}">Odalar </a></li>
-                                    <li><a href="{% url 'contact' %}">Contact</a></li>
-                                    <li><a href="https://www.reseliva.com/booknow/patina-cappadocia/">Rezervasyon Yap</a></li>
-                                                                    
-                                    
+                                    <li><a href="{% url 'index' %}">Ana Sayfa</a></li>
+                                    <li><a href="{% url 'about' %}">Hakkımızda</a></li>
+                                    <li><a href="{% url 'rooms' %}">Odalarımız</a></li>
+                                    <li><a href="{% url 'contact' %}">İletişim</a></li>
+                                    <li><a href="https://www.reseliva.com/booknow/patina-cappadocia/" class="highlight">Rezervasyon</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -34,44 +118,23 @@
                     <div class="col-xl-2 col-lg-2">
                         <div class="logo-img">
                             <a href="{% url 'index' %}">
-                                <img src="{% static 'img/logo1-(1).png' %}" alt="">
-                            <script>
-                                window.addEventListener('scroll', function() {
-                                    var header = document.getElementById('sticky-header');
-                                    var logo = document.querySelector('.logo-img img');
-                                    if (window.scrollY > 200) {
-                                        header.classList.add('sticky');
-                                        logo.src = "{% static 'img/logowhite.png' %}";
-                                    } else {
-                                        header.classList.remove('sticky');
-                                        logo.src = "{% static 'img/logo1-(1).png' %}";
-                                    }
-                                });
-
-                                // Zoom the navbar to 200% on mobile devices
-                                if (window.innerWidth <= 768) {
-                                    document.querySelectorAll('.header-area a').forEach(link => {
-                                        link.style.zoom = '200%';
-                                    });
-                                }
-                            </script>
+                                <img src="{% static 'img/logo1-(1).png' %}" alt="Patina Cappadocia Logo">
                             </a>
                         </div>
                     </div>
-                    <div class="col-xl-5 col-lg-4 d-none d-lg-block">
-                        <div class="book_room">
+                    <div class="col-xl-5 col-lg-5">
+                        <div class="book_room d-none d-lg-flex">
                             <div class="socail_links">
                                 <ul>
-                                    
                                     <li>
-                                        <a href="https://www.instagram.com/patinacappadocia/">
+                                        <a href="https://www.instagram.com/patinacappadocia/" aria-label="Instagram">
                                             <i class="fa fa-instagram"></i>
                                         </a>
                                     </li>
                                 </ul>
                             </div>
-                            <div class="book_btn d-none d-lg-block">
-                                <a href="https://www.reseliva.com/booknow/patina-cappadocia/">Rezervasyon Yap</a>
+                            <div class="book_btn">
+                                <a href="https://www.reseliva.com/booknow/patina-cappadocia/">Hemen Rezervasyon Yap</a>
                             </div>
                         </div>
                     </div>
@@ -83,5 +146,24 @@
         </div>
     </div>
 </header>
-<!-- header-end -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const header = document.getElementById('sticky-header');
+        const logo = document.querySelector('.logo-img img');
+        
+        function handleScroll() {
+            if (window.scrollY > 100) {
+                header.classList.add('sticky');
+                logo.src = "{% static 'img/logowhite.png' %}";
+            } else {
+                header.classList.remove('sticky');
+                logo.src = "{% static 'img/logo1-(1).png' %}";
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+    });
+</script>
 

@@ -9,24 +9,24 @@
 <!-- bradcam_area_end -->
 
 <!-- about_area_start -->
-<section class="contact-section">
-    <div class="about_area mb-50">
+<section class="about-section">
+    <div class="about_area">
         <div class="container">
             <div class="row">
                 <div class="col-xl-5 col-lg-5">
                     <div class="about_info">
-                        <div class="section_title mb-20px">
+                        <div class="section_title">
                             <span>Hakkımızda</span>
-                            <h3>Kapadokya’nın Büyüsüyle<br> Lüks Konaklama</h3>
+                            <h3>Kapadokya'nın Büyüsüyle<br>Lüks Konaklama</h3>
                         </div>
-                        <p>Patina Cappadocia, Türkiye’nin kültürel ve doğal mirasının en gözde noktası olan Kapadokya’da, Uçhisar Kalesi’nin hemen yakınında yer alır. Doğanın büyüleyici manzaralarını geleneksel taş mimari ile birleştirerek, konforu ve tarihi bir arada sunar.</p>
-                        <p>Otelimiz, Kapadokya’nın kalbindeki benzersiz konumu sayesinde misafirlerine eşsiz bir deneyim sunar. Sıcak hava balonu turları, tarihi mekanlar ve Kapadokya’nın doğal güzelliklerine kolay erişim sağlayan Patina Cappadocia, konuklarına unutulmaz anılar biriktirme fırsatı sunar.</p>
+                        <p>Patina Kapadokya, Türkiye'nin kültürel ve doğal mirasının en gözde noktası olan Kapadokya'da, Uçhisar Kalesi'nin hemen yakınında yer alır. Doğanın büyüleyici manzaralarını geleneksel taş mimari ile birleştirerek, konforu ve tarihi bir arada sunar.</p>
+                        <p>Otelimiz, Kapadokya'nın kalbindeki benzersiz konumu sayesinde misafirlerine eşsiz bir deneyim sunar. Sıcak hava balonu turları, tarihi mekanlar ve Kapadokya'nın doğal güzelliklerine kolay erişim sağlayan Patina Kapadokya, konuklarına unutulmaz anılar biriktirme fırsatı sunar.</p>
                     </div>
                 </div>
                 <div class="col-xl-7 col-lg-7">
                     <div class="about_thumb d-flex">
                         <div class="img_1">
-                            <img src="{% static 'img/about/58.jpg' %}" alt="Patina Cappadocia Oteli">
+                            <img src="{% static 'img/about/58.jpg' %}" alt="Patina Kapadokya Oteli">
                         </div>
                         <div class="img_2">
                             <img src="{% static 'img/about/71.jpg' %}" alt="Kapadokya'da Lüks">
@@ -36,10 +36,93 @@
             </div>
         </div>
     </div>
-    <!-- about_area_end -->
-
-    <!-- rooms_area_start -->
-    {% include 'partials/_roomsSlider.html' %}
 </section>
+<!-- about_area_end -->
+
+<!-- rooms_area_start -->
+{% include 'partials/_roomsSlider.html' %}
 <!-- rooms_area_end -->
+
+<style>
+    .bradcam_area {
+        height: 450px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-size: cover;
+        background-position: center;
+        margin: 0;
+        padding: 0;
+    }
+    .bradcam_area h3 {
+        font-size: 50px;
+        font-weight: 700;
+        color: #fff;
+        text-transform: uppercase;
+        margin: 0;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    .about_area {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .section_title {
+        margin-bottom: 40px;
+    }
+    .section_title span {
+        font-size: 20px;
+        font-weight: 400;
+        color: #009DFF;
+        display: block;
+        margin-bottom: 10px;
+    }
+    .section_title h3 {
+        font-size: 42px;
+        font-weight: 700;
+        line-height: 1.3;
+        color: #1F1F1F;
+    }
+    .about_info p {
+        font-size: 16px;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        color: #666;
+    }
+    .about_thumb {
+        gap: 15px;
+    }
+    .about_thumb img {
+        border-radius: 5px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    @media (max-width: 991px) {
+        .bradcam_area {
+            height: 300px;
+        }
+        .bradcam_area h3 {
+            font-size: 40px;
+        }
+        .about_area {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+        .section_title h3 {
+            font-size: 32px;
+        }
+    }
+    @media (max-width: 767px) {
+        .bradcam_area {
+            height: 200px;
+        }
+        .bradcam_area h3 {
+            font-size: 30px;
+        }
+        .section_title h3 {
+            font-size: 28px;
+        }
+    }
+</style>
+
 {% endblock %}
