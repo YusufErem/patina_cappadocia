@@ -1,7 +1,7 @@
 {% load static %}
 <div class="offers_area px-0">
     <div class="container">
-        <div class="d-none d-sm-block mb-5 pb-4">
+        <div class="mb-5 pb-4">
             <div class="row">
                 <div class="col-12">
                     <div class="section_title text-center mb-4 mt-4">
@@ -110,6 +110,9 @@
         border-radius: 8px;
         box-shadow: 0 0 15px rgba(0,0,0,0.1);
         transition: all 0.3s ease;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
     }
 
     .single_offers:hover {
@@ -120,6 +123,7 @@
         height: 250px;
         object-fit: cover;
         border-radius: 8px;
+        width: 100%;
     }
 
     .single_offers h3 {
@@ -131,6 +135,7 @@
         min-height: 100px;
         padding-left: 0;
         list-style: none;
+        margin-bottom: auto;
     }
 
     .single_offers ul li {
@@ -140,12 +145,39 @@
 
     .book_now {
         width: 100%;
-        margin-top: auto;
+        margin-top: 15px;
     }
 
     @media (max-width: 768px) {
         .about_thumb img {
             height: 200px;
+        }
+        .single_offers {
+            margin-bottom: 20px;
+        }
+        .single_offers h3 {
+            font-size: 1.3rem;
+        }
+        .single_offers ul li {
+            font-size: 0.85rem;
+        }
+        .section_title h3 {
+            font-size: 1.8rem;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .about_thumb img {
+            height: 180px;
+        }
+        .single_offers {
+            padding: 15px;
+        }
+        .single_offers h3 {
+            font-size: 1.2rem;
+        }
+        .section_title h3 {
+            font-size: 1.5rem;
         }
     }
 </style>

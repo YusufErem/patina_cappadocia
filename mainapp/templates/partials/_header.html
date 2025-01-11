@@ -6,10 +6,10 @@
             width: 100%;
             z-index: 999;
             transition: all 0.3s ease;
-            background: transparent;
+            background: rgba(0,0,0,0);
         }
         .header-area.sticky {
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.9);
         }
         .header-area a {
             text-decoration: none;
@@ -88,7 +88,7 @@
         @media (max-width: 991px) {
             .header-area {
                 padding: 10px 0;
-                background: rgba(0, 0, 0, 0.8);
+                background: transparent;
             }
             .mobile_menu {
                 padding: 10px;
@@ -153,17 +153,16 @@
         const logo = document.querySelector('.logo-img img');
         
         function handleScroll() {
-            if (window.scrollY > 100) {
-                header.classList.add('sticky');
+            if (window.scrollY > 0) {
+                header.parentElement.classList.add('sticky');
                 logo.src = "{% static 'img/logowhite.png' %}";
             } else {
-                header.classList.remove('sticky');
+                header.parentElement.classList.remove('sticky');
                 logo.src = "{% static 'img/logo1-(1).png' %}";
             }
         }
 
         window.addEventListener('scroll', handleScroll);
-        handleScroll();
     });
 </script>
 

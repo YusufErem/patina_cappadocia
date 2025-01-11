@@ -18,4 +18,5 @@ Disallow: /private/
 Disallow: /tmp/
 Disallow: /cache/
 Disallow: /*.php$
-Disallow: /*?* 
+Disallow: /*?*
+Disallow: /ping/ 

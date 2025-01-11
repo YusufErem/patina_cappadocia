@@ -20,13 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', 'False').lower() == 'True'  # False if not in os.environ or not 'True' in os.environ else True
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
-# Application definition
-
+#SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = 'django-insecure-1234567890'
+#DEBUG = os.environ.get('DEBUG', 'False').lower() == 'True'  
+DEBUG = True
+#ALLOWED_HOSTS = ['your-domain.onrender.com', 'www.your-domain.com']
+ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -126,3 +125,14 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Ping endpoint'i için rate limiting ekleyin
+if not DEBUG:
+    MIDDLEWARE += [
+        'django.middleware.common.CommonMiddleware',
+    ]
+
+    # Rate limiting settings
+    RATELIMIT_ENABLE = True
+    RATELIMIT_USE_CACHE = 'default'
+    RATELIMIT_VIEW = '5/m'  # Dakikada 5 istek
