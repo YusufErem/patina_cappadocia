@@ -20,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
-#SECRET_KEY = os.environ.get('SECRET_KEY')
-SECRET_KEY = 'django-insecure-1234567890'
-#DEBUG = os.environ.get('DEBUG', 'False').lower() == 'True'  
-DEBUG = True
-#ALLOWED_HOSTS = ['your-domain.onrender.com', 'www.your-domain.com']
-ALLOWED_HOSTS = ['*']
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
+DEBUG = os.environ.get('DEBUG', 'False').lower() == 'True'  
+
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(' ')
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -54,7 +54,7 @@ ROOT_URLCONF = 'patina_cappadocia.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'mainapp/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -136,3 +136,6 @@ if not DEBUG:
     RATELIMIT_ENABLE = True
     RATELIMIT_USE_CACHE = 'default'
     RATELIMIT_VIEW = '5/m'  # Dakikada 5 istek
+
+# Admin panelini devre dışı bırakıyoruz
+ADMIN_ENABLED = False
