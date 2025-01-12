@@ -21,10 +21,10 @@ from django.conf.urls.static import static
 from django.views.generic import RedirectView
 from django.shortcuts import render
 
-def handler404(request, exception):
+def custom_404(request, exception=None):
     return render(request, '404.html', status=404)
 
-def handler500(request):
+def custom_500(request, exception=None):
     return render(request, '404.html', status=500)
 
 urlpatterns = [
@@ -36,6 +36,6 @@ urlpatterns = [
     path('', include('mainapp.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-# 404 ve 500 hata sayfaları için handler'ları ayarla
-handler404 = 'patina_cappadocia.urls.handler404'
-handler500 = 'patina_cappadocia.urls.handler500'
+# Hata sayfaları için handler'ları ayarla
+handler404 = custom_404
+handler500 = custom_500
