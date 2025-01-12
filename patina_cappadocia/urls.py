@@ -18,8 +18,9 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from django.views.generic import RedirectView
+from django.views.generic import RedirectView, TemplateView
 from django.shortcuts import render
+from django.views.generic.base import TemplateView
 
 def custom_404(request, exception=None):
     return render(request, '404.html', status=404)
@@ -31,6 +32,10 @@ urlpatterns = [
     # Admin URL'sini devre dışı bırak ve yanlış girişleri yönlendir
     path('admin/', RedirectView.as_view(url='/', permanent=True)),
     path('admin', RedirectView.as_view(url='/', permanent=True)),
+    
+    # Robots.txt and Sitemap
+    path('robots.txt', TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
+    path('sitemap.xml', TemplateView.as_view(template_name="sitemap.xml", content_type="application/xml")),
     
     # Ana uygulama URL'leri
     path('', include('mainapp.urls')),
