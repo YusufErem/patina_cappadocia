@@ -88,6 +88,22 @@
                                 <a class="book_now btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#presidentialSuiteModal">İncele</a>
                             </div>
                         </div>
+
+                        <!-- Curve Honeymoon Oda -->
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="single_offers h-100">
+                                <div class="about_thumb">
+                                    <img src="{% static 'img/rooms/CurveHoneymoon1.jpeg' %}" alt="Curve Honeymoon Oda">
+                                </div>
+                                <h3>Curve Honeymoon Oda</h3>
+                                <ul>
+                                    <li>Jakuzili</li>
+                                    <li>Çift Kişilik Yatak - 50 m²</li>
+                                    <li>Klima, Şömine, Jakuzi</li>
+                                </ul>
+                                <a class="book_now btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#curveHoneymoonModal">İncele</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -120,7 +136,7 @@
     }
 
     .about_thumb img {
-        height: 250px;
+        height: 300px;
         object-fit: cover;
         border-radius: 8px;
         width: 100%;
@@ -180,30 +196,62 @@
             font-size: 1.5rem;
         }
     }
-</style>
 
-<!-- Modal Yapıları -->
-<style>
     .modal-dialog {
-        max-width: 800px !important;
+        max-width: 1000px !important;
         width: 95% !important;
         margin: 1.75rem auto;
     }
     
     .modal-content {
-        max-height: 85vh;
+        max-height: 90vh;
         overflow-y: auto;
     }
     
-    .room-details {
-        padding: 20px;
-        max-width: 700px;
-        margin: 0 auto;
+    .carousel-inner img {
+        height: 500px;
+        object-fit: cover;
+        width: 100%;
     }
-    </style>
-    
-<!-- Queen, King Suite, Executive, Presidential Suite Modal -->
-<!-- Yukarıdaki yapıyı diğer odalara uygun hale getirerek tekrar edebilirsiniz. -->
+
+    .modal-body {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .modal-carousel {
+        flex: 1 1 60%;
+        min-width: 300px;
+    }
+
+    .room-details {
+        flex: 1 1 35%;
+        min-width: 300px;
+        padding: 20px;
+    }
+
+    @media (max-width: 768px) {
+        .modal-body {
+            flex-direction: column;
+        }
+        .carousel-inner img {
+            height: 300px;
+        }
+        .about_thumb img {
+            height: 200px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .about_thumb img {
+            height: 180px;
+        }
+    }
+</style>
+
+<!-- Modal Yapıları -->
+<!-- Örnek modal yapısı (tüm modallara uygulanacak) -->
 <div class="modal fade" id="superiorModal" tabindex="-1" aria-labelledby="superiorModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -213,51 +261,53 @@
             </div>
             <div class="modal-body">
                 <!-- Carousel -->
-                <div id="superiorCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="{% static 'img/rooms/superior1.jpeg' %}" class="d-block w-100" alt="Superior Oda">
+                <div class="modal-carousel">
+                    <div id="superiorCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="{% static 'img/rooms/superior1.jpeg' %}" class="d-block w-100" alt="Superior Oda">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/superior2.jpeg' %}" class="d-block w-100" alt="Superior Oda 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/superior3.jpeg' %}" class="d-block w-100" alt="Superior Oda 3">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/superior4.jpeg' %}" class="d-block w-100" alt="Superior Oda 4">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/superior5.jpeg' %}" class="d-block w-100" alt="Superior Oda 5">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/superior6.jpeg' %}" class="d-block w-100" alt="Superior Oda 6">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/superior7.jpeg' %}" class="d-block w-100" alt="Superior Oda 7">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/superior8.jpeg' %}" class="d-block w-100" alt="Superior Oda 8">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/superior9.jpeg' %}" class="d-block w-100" alt="Superior Oda 9">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/superior10.jpeg' %}" class="d-block w-100" alt="Superior Oda 10">
+                            </div>
                         </div>
-                        <div class="carousel-item">
-                            <img src="{% static 'img/rooms/superior2.jpeg' %}" class="d-block w-100" alt="Superior Oda 2">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{% static 'img/rooms/superior3.jpeg' %}" class="d-block w-100" alt="Superior Oda 3">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{% static 'img/rooms/superior4.jpeg' %}" class="d-block w-100" alt="Superior Oda 4">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{% static 'img/rooms/superior5.jpeg' %}" class="d-block w-100" alt="Superior Oda 5">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{% static 'img/rooms/superior6.jpeg' %}" class="d-block w-100" alt="Superior Oda 6">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{% static 'img/rooms/superior7.jpeg' %}" class="d-block w-100" alt="Superior Oda 7">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{% static 'img/rooms/superior8.jpeg' %}" class="d-block w-100" alt="Superior Oda 8">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{% static 'img/rooms/superior9.jpeg' %}" class="d-block w-100" alt="Superior Oda 9">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{% static 'img/rooms/superior10.jpeg' %}" class="d-block w-100" alt="Superior Oda 10">
-                        </div>
+                        <a class="carousel-control-prev" href="#superiorCarousel" role="button" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Önceki</span>
+                        </a>
+                        <a class="carousel-control-next" href="#superiorCarousel" role="button" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Sonraki</span>
+                        </a>
                     </div>
-                    <a class="carousel-control-prev" href="#superiorCarousel" role="button" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Önceki</span>
-                    </a>
-                    <a class="carousel-control-next" href="#superiorCarousel" role="button" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Sonraki</span>
-                    </a>
                 </div>
                 <!-- Detaylar -->
-                <div class="room-details mt-4 px-4">
-                    <h5 class="text-center mb-4">Oda Özellikleri</h5>
+                <div class="room-details">
+                    <h5 class="mb-4">Oda Özellikleri</h5>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="feature-category mb-4">
@@ -304,6 +354,7 @@
     </div>
 </div>
 
+<!-- Queen Modal -->
 <div class="modal fade" id="queenModal" tabindex="-1" aria-labelledby="queenModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -313,27 +364,47 @@
             </div>
             <div class="modal-body">
                 <!-- Carousel -->
-                <div id="queenCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="{% static 'img/rooms/queen1.jpeg' %}" class="d-block w-100" alt="Queen Oda">
+                <div class="modal-carousel">
+                    <div id="queenCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="{% static 'img/rooms/queen1.jpeg' %}" class="d-block w-100" alt="Queen Oda">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/queen2.jpeg' %}" class="d-block w-100" alt="Queen Oda 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/queen3.jpeg' %}" class="d-block w-100" alt="Queen Oda 3">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/queen4.jpeg' %}" class="d-block w-100" alt="Queen Oda 4">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/queen5.jpeg' %}" class="d-block w-100" alt="Queen Oda 5">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/queen6.jpeg' %}" class="d-block w-100" alt="Queen Oda 6">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/queen7.jpeg' %}" class="d-block w-100" alt="Queen Oda 7">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/queen8.jpeg' %}" class="d-block w-100" alt="Queen Oda 8">
+                            </div>
                         </div>
-                        <div class="carousel-item">
-                            <img src="{% static 'img/rooms/queen2.jpeg' %}" class="d-block w-100" alt="Queen Oda 2">
-                        </div>
+                        <a class="carousel-control-prev" href="#queenCarousel" role="button" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Önceki</span>
+                        </a>
+                        <a class="carousel-control-next" href="#queenCarousel" role="button" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Sonraki</span>
+                        </a>
                     </div>
-                    <a class="carousel-control-prev" href="#queenCarousel" role="button" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Önceki</span>
-                    </a>
-                    <a class="carousel-control-next" href="#queenCarousel" role="button" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Sonraki</span>
-                    </a>
                 </div>
                 <!-- Detaylar -->
-                <div class="room-details mt-4 px-4">
-                    <h5 class="text-center mb-4">Oda Özellikleri</h5>
+                <div class="room-details">
+                    <h5 class="mb-4">Oda Özellikleri</h5>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="feature-category mb-4">
@@ -380,6 +451,7 @@
     </div>
 </div>
 
+<!-- King Suite Modal -->
 <div class="modal fade" id="kingSuiteModal" tabindex="-1" aria-labelledby="kingSuiteModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -389,48 +461,50 @@
             </div>
             <div class="modal-body">
                 <!-- Carousel -->
-                <div id="kingSuiteCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="{% static 'img/rooms/kingsuite1.jpeg' %}" class="d-block w-100" alt="King Suite">
+                <div class="modal-carousel">
+                    <div id="kingSuiteCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="{% static 'img/rooms/kingsuite1.jpeg' %}" class="d-block w-100" alt="King Suite">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/kingsuite2.jpeg' %}" class="d-block w-100" alt="King Suite 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/kingsuite3.jpeg' %}" class="d-block w-100" alt="King Suite 3">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/kingsuite4.jpeg' %}" class="d-block w-100" alt="King Suite 4">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/kingsuite5.jpeg' %}" class="d-block w-100" alt="King Suite 5">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/kingsuite6.jpeg' %}" class="d-block w-100" alt="King Suite 6">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/kingsuite7.jpeg' %}" class="d-block w-100" alt="King Suite 7">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/kingsuite8.jpeg' %}" class="d-block w-100" alt="King Suite 8">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/kingsuite9.jpeg' %}" class="d-block w-100" alt="King Suite 9">
+                            </div>
                         </div>
-                        <div class="carousel-item">
-                            <img src="{% static 'img/rooms/kingsuite2.jpeg' %}" class="d-block w-100" alt="King Suite 2">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{% static 'img/rooms/kingsuite3.jpeg' %}" class="d-block w-100" alt="King Suite 3">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{% static 'img/rooms/kingsuite4.jpeg' %}" class="d-block w-100" alt="King Suite 4">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{% static 'img/rooms/kingsuite5.jpeg' %}" class="d-block w-100" alt="King Suite 5">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{% static 'img/rooms/kingsuite6.jpeg' %}" class="d-block w-100" alt="King Suite 6">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{% static 'img/rooms/kingsuite7.jpeg' %}" class="d-block w-100" alt="King Suite 7">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{% static 'img/rooms/kingsuite8.jpeg' %}" class="d-block w-100" alt="King Suite 8">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{% static 'img/rooms/kingsuite9.jpeg' %}" class="d-block w-100" alt="King Suite 9">
-                        </div>
+                        <a class="carousel-control-prev" href="#kingSuiteCarousel" role="button" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Önceki</span>
+                        </a>
+                        <a class="carousel-control-next" href="#kingSuiteCarousel" role="button" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Sonraki</span>
+                        </a>
                     </div>
-                    <a class="carousel-control-prev" href="#kingSuiteCarousel" role="button" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Önceki</span>
-                    </a>
-                    <a class="carousel-control-next" href="#kingSuiteCarousel" role="button" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Sonraki</span>
-                    </a>
                 </div>
                 <!-- Detaylar -->
-                <div class="room-details mt-4 px-4">
-                    <h5 class="text-center mb-4">Oda Özellikleri</h5>
+                <div class="room-details">
+                    <h5 class="mb-4">Oda Özellikleri</h5>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="feature-category mb-4">
@@ -477,6 +551,7 @@
     </div>
 </div>
 
+<!-- Executive Modal -->
 <div class="modal fade" id="executiveModal" tabindex="-1" aria-labelledby="executiveModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -486,27 +561,35 @@
             </div>
             <div class="modal-body">
                 <!-- Carousel -->
-                <div id="executiveCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="{% static 'img/rooms/executive1.jpeg' %}" class="d-block w-100" alt="Executive Oda">
+                <div class="modal-carousel">
+                    <div id="executiveCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="{% static 'img/rooms/executive1.jpeg' %}" class="d-block w-100" alt="Executive Oda">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/executive2.jpeg' %}" class="d-block w-100" alt="Executive Oda 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/executive3.jpeg' %}" class="d-block w-100" alt="Executive Oda 3">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/executive4.jpeg' %}" class="d-block w-100" alt="Executive Oda 4">
+                            </div>
                         </div>
-                        <div class="carousel-item">
-                            <img src="{% static 'img/rooms/executive3.jpeg' %}" class="d-block w-100" alt="Executive Oda 2">
-                        </div>
+                        <a class="carousel-control-prev" href="#executiveCarousel" role="button" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Önceki</span>
+                        </a>
+                        <a class="carousel-control-next" href="#executiveCarousel" role="button" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Sonraki</span>
+                        </a>
                     </div>
-                    <a class="carousel-control-prev" href="#executiveCarousel" role="button" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Önceki</span>
-                    </a>
-                    <a class="carousel-control-next" href="#executiveCarousel" role="button" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Sonraki</span>
-                    </a>
                 </div>
                 <!-- Detaylar -->
-                <div class="room-details mt-4 px-4">
-                    <h5 class="text-center mb-4">Oda Özellikleri</h5>
+                <div class="room-details">
+                    <h5 class="mb-4">Oda Özellikleri</h5>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="feature-category mb-4">
@@ -553,6 +636,7 @@
     </div>
 </div>
 
+<!-- Presidential Suite Modal -->
 <div class="modal fade" id="presidentialSuiteModal" tabindex="-1" aria-labelledby="presidentialSuiteModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -562,27 +646,135 @@
             </div>
             <div class="modal-body">
                 <!-- Carousel -->
-                <div id="presidentialSuiteCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="{% static 'img/rooms/presidentialsuite1.jpeg' %}" class="d-block w-100" alt="Presidential Suite">
+                <div class="modal-carousel">
+                    <div id="presidentialSuiteCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="{% static 'img/rooms/presidentialsuite1.jpeg' %}" class="d-block w-100" alt="Presidential Suite">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/presidentialsuite2.jpeg' %}" class="d-block w-100" alt="Presidential Suite 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/presidentialsuite3.jpeg' %}" class="d-block w-100" alt="Presidential Suite 3">
+                            </div>
                         </div>
-                        <div class="carousel-item">
-                            <img src="{% static 'img/rooms/presidentialsuite2.jpeg' %}" class="d-block w-100" alt="Presidential Suite 2">
-                        </div>
+                        <a class="carousel-control-prev" href="#presidentialSuiteCarousel" role="button" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Önceki</span>
+                        </a>
+                        <a class="carousel-control-next" href="#presidentialSuiteCarousel" role="button" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Sonraki</span>
+                        </a>
                     </div>
-                    <a class="carousel-control-prev" href="#presidentialSuiteCarousel" role="button" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Önceki</span>
-                    </a>
-                    <a class="carousel-control-next" href="#presidentialSuiteCarousel" role="button" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Sonraki</span>
-                    </a>
                 </div>
                 <!-- Detaylar -->
-                <div class="room-details mt-4 px-4">
-                    <h5 class="text-center mb-4">Oda Özellikleri</h5>
+                <div class="room-details">
+                    <h5 class="mb-4">Oda Özellikleri</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="feature-category mb-4">
+                                <h6 class="border-bottom pb-2">Banyo</h6>
+                                <ul class="list-unstyled">
+                                    <li><i class="fa fa-check text-success me-2"></i>Ücretsiz banyo/kozmetik ürünleri</li>
+                                    <li><i class="fa fa-check text-success me-2"></i>Saç kurutma makinesi</li>
+                                    <li><i class="fa fa-check text-success me-2"></i>Şampuan</li>
+                                    <li><i class="fa fa-check text-success me-2"></i>Sabun</li>
+                                    <li><i class="fa fa-check text-success me-2"></i>Tuvalet kağıdı</li>
+                                    <li><i class="fa fa-check text-success me-2"></i>Havlu</li>
+                                </ul>
+                            </div>
+                            <div class="feature-category mb-4">
+                                <h6 class="border-bottom pb-2">Yatak Odası</h6>
+                                <ul class="list-unstyled">
+                                    <li><i class="fa fa-check text-success me-2"></i>Klima</li>
+                                    <li><i class="fa fa-times text-danger me-2"></i>Beşik (çocuk yatağı) yoktur</li>
+                                    <li><i class="fa fa-check text-success me-2"></i>Isıtma</li>
+                                    <li><i class="fa fa-times text-danger me-2"></i>Portatif/ilave yatak yoktur</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-category mb-4">
+                                <h6 class="border-bottom pb-2">İnternet</h6>
+                                <ul class="list-unstyled">
+                                    <li><i class="fa fa-check text-success me-2"></i>Ücretsiz kablosuz İnternet (100+ Mbps)</li>
+                                </ul>
+                            </div>
+                            <div class="feature-category mb-4">
+                                <h6 class="border-bottom pb-2">Diğer</h6>
+                                <ul class="list-unstyled">
+                                    <li><i class="fa fa-check text-success me-2"></i>Günlük kat hizmetleri</li>
+                                    <li><i class="fa fa-check text-success me-2"></i>Çarşaf takımı değişimi (istek üzerine)</li>
+                                    <li><i class="fa fa-check text-success me-2"></i>Havlu değişimi (istek üzerine)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Curve Honeymoon Modal -->
+<div class="modal fade" id="curveHoneymoonModal" tabindex="-1" aria-labelledby="curveHoneymoonModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="curveHoneymoonModalLabel">Curve Honeymoon Oda</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Carousel -->
+                <div class="modal-carousel">
+                    <div id="curveHoneymoonCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="{% static 'img/rooms/CurveHoneymoon1.jpeg' %}" class="d-block w-100" alt="Curve Honeymoon Oda">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/CurveHoneymoon2.jpeg' %}" class="d-block w-100" alt="Curve Honeymoon Oda 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/CurveHoneymoon3.jpeg' %}" class="d-block w-100" alt="Curve Honeymoon Oda 3">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/CurveHoneymoon4.jpeg' %}" class="d-block w-100" alt="Curve Honeymoon Oda 4">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/CurveHoneymoon5.jpeg' %}" class="d-block w-100" alt="Curve Honeymoon Oda 5">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/CurveHoneymoon6.jpeg' %}" class="d-block w-100" alt="Curve Honeymoon Oda 6">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/CurveHoneymoon7.jpeg' %}" class="d-block w-100" alt="Curve Honeymoon Oda 7">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/CurveHoneymoon8.jpeg' %}" class="d-block w-100" alt="Curve Honeymoon Oda 8">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/CurveHoneymoon9.jpeg' %}" class="d-block w-100" alt="Curve Honeymoon Oda 9">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/rooms/CurveHoneymoon10.jpeg' %}" class="d-block w-100" alt="Curve Honeymoon Oda 10">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#curveHoneymoonCarousel" role="button" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Önceki</span>
+                        </a>
+                        <a class="carousel-control-next" href="#curveHoneymoonCarousel" role="button" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Sonraki</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Detaylar -->
+                <div class="room-details">
+                    <h5 class="mb-4">Oda Özellikleri</h5>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="feature-category mb-4">
